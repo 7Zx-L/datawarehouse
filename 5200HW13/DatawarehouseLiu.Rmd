@@ -1,0 +1,69 @@
+---
+title: "Explore Data Warehouses"
+author: "Zixuan Liu"
+date: "2023-08-01"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+##Question 1
+Both fact table and star schema are very inportant for organizing and structuring
+data for analyzing.
+Fact table could used to store quantitative data which are generally numeric.
+Each row could represent a specific event, and each column could represent an
+attribute related to the event.The fact table could also includes foreign keys
+reference to dimension tables. Each dimension table is connected to the fact table
+through a foreign key, and the data will be easier to aggregate and analyze
+for multidimensional analysis.
+Star schema could be used to design a data warehouse, and it's optimized for OLAP
+queries. The fact table is at the center of the schema and surrounded by some
+dimension tables. The query will be simplified and become faster.
+I think transactional database could be used for OLAP, but generally it might
+not be a good choice to use it for OLAP. Transactional database is optimized for
+fast update, insertion and so on, and is very useful for OLTP cause OLTP requires
+reaction to real-time transactional data. Cause transactional database is not
+optimized for complex analytical problems, it may not performing well. Also, the
+transactional database is generally normalized and the speed of query might be
+slower.
+
+##Qeusion 2
+Data warehouse is a centralized repository that stores historical and structured
+data for enterprise-wide reporting and analysis. Data mart is the subset of data
+warehouse, and it could provide specialized data under specific condition. Data 
+lake is a vast and relative flexible storage repository which stores both 
+structured and unstructured data. The data structure will be stored in its raw
+format, which enables the exploration and analyzaion of diverse data types.
+Example of data warehouse: Healthcare organization could use a data warehouse to
+store large amount of data including the billing system, health records, patient
+feedback and so on. Data could be used to make decisions and imporve the caring
+ability. Data warehouse could porvide a comprehensive view of many aspects of the
+healthcare organization.
+Example of data mart: data mart could provide efficient access to data and 
+facilitate the decision-making process. Like the data mart for human resources,
+it could contain information like employee information, performence, satisfaction
+level and so on. By using this data mart, human resource could make some strategies
+and decisions.
+Example of data lake: The flexibility of data lake allows organizations process
+large amounts of data from diverse source. By analyzing the data of customers,
+the customers could be classified into different groups based on their behavior,
+preference and so on. This could help target the potential customers, and provide
+personalize product.
+An article about the differences is shown in the following website https://aws.amazon.com/cn/compare/the-difference-between-a-data-warehouse-data-lake-and-data-mart/
+##Question 3
+I hope to track under what condition, the flights and birds strike. I also want
+to know some details about both the flight, the airport and the birds. To find
+out the background of the stike, I need to know the date the strike happened, and 
+also under what condition it happened. The condition should contain both the 
+weather condition and the flying condition. Also, where did the strike happened
+is also important. I also need to include the details of the flights and birds to
+make the record of the strike complete.
+```{r}
+library(knitr)
+
+image_url <- "https://imgur.com/a/sQU5fR2"
+
+knitr::include_graphics(image_url)
+```
+
